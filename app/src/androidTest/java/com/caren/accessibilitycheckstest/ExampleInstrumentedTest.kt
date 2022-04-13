@@ -2,7 +2,10 @@ package com.caren.accessibilitycheckstest
 
 import androidx.compose.ui.test.assertIsDisplayed
 import androidx.compose.ui.test.junit4.createAndroidComposeRule
+import androidx.compose.ui.test.onAllNodesWithTag
+import androidx.compose.ui.test.onNodeWithContentDescription
 import androidx.compose.ui.test.onNodeWithText
+import androidx.compose.ui.test.performClick
 import androidx.test.espresso.accessibility.AccessibilityChecks
 import androidx.test.ext.junit.runners.AndroidJUnit4
 
@@ -22,6 +25,8 @@ class ExampleInstrumentedTest {
         Thread.sleep(1000)
 
         composeTestRule.onNodeWithText("Hello!").assertIsDisplayed()
+
+        composeTestRule.onNodeWithContentDescription("Favorite").performClick()
     }
 
     companion object {
